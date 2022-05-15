@@ -513,12 +513,6 @@ def ba_zi(ct):
 
 
 if __name__ == '__main__':
-    # ct0 = datetime.datetime(2019, 7, 16, 10, 50, 15)
-    # ct1 = datetime.datetime(1988, 12, 26, 23, 6, 15)
-    # ct2 = datetime.datetime(2019, 3, 2, 19, 6, 15)
-    # ba_zi(ct0)
-    # ba_zi(ct1)
-    # ba_zi(ct2)
 
     ct = datetime.datetime(2022, 5, 15, 0, 30, 15)
     ba_zi(ct)
