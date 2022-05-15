@@ -481,24 +481,6 @@ class Lunar(object):
                 count[i] += 1
         return count
 
-    def wu_xing_lack(self):
-        wu_xing = ["金", "木", "水", "火", "土"]
-        gen_wu_xing = self.gen_wu_xing()
-        ben_ming_wu_xing = self.nian_ben_ming[self.gz_year()][-2]
-        if ben_ming_wu_xing in gen_wu_xing.keys():
-            gen_wu_xing[ben_ming_wu_xing] += 1
-        else:
-            gen_wu_xing[ben_ming_wu_xing] = 1
-        gen_wu_xing[ben_ming_wu_xing[-1]] = ben_ming_wu_xing
-        wu_x_lack = []
-        for w in wu_xing:
-            if w in gen_wu_xing.keys():
-                continue
-            else:
-                wu_x_lack.append(w)
-        return wu_x_lack
-
-
 # 测试
 def ba_zi(ct):
     ln = Lunar(ct)
@@ -508,9 +490,6 @@ def ba_zi(ct):
     print('{} {} {} {}'.format(ln.gz_year(), ln.gz_month(), ln.gz_day(), ln.gz_hour())) # TODO:
     print('{} {} {} {}'.format(ln.gz_to_wu_xing(ln.gz_year()), ln.gz_to_wu_xing(ln.gz_month()), ln.gz_to_wu_xing(ln.gz_day()), ln.gz_to_wu_xing(ln.gz_hour())))
     print('{}'.format(ln.gen_wu_xing()))
-    print('五行缺 {}'.format(ln.wu_xing_lack()))
-    # print('节气：{}'.format(ln.ln_jie()))
-
 
 if __name__ == '__main__':
 
