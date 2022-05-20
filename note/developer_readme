@@ -12,11 +12,11 @@ Pypl install :
     pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
     Unix/MacOS/Linux
-    pip3 install -r moyu\note\moyu_engine_package
+    pip3 install -r note/package.txt
 
-    pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note\package
+    pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note/package.txt
 
     Windows
-    pip install -r moyu\note\moyu_engine_package
+    pip install -r note\package.txt
 
-    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note\package
+    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note\package.txt

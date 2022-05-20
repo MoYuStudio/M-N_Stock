@@ -2,7 +2,6 @@
 #-*-coding:utf-8-*-
 
 import module
-import datetime
 
 UO = module.utc_offset.UtcOffset()
 UTC = UO.UTC
