@@ -5,20 +5,27 @@
 
     天人合一 玄学炒股 永远满仓 永远热泪盈眶 awe
 
+[Outline](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/outline)
+[Note](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/note)
+
 ## 引索
 
+>
 > [`Official Documentation`](#OfficialDocumentation) 官方文档<br/>
 >
 >> [`API`](#API) 接口<br/>
 >>
 >>> [`Module`](#APIModule) 模块<br/>
 >>>
->>>> [`day_convert`](#APIModule_day_convert)公历转换干支历 <br/>
+>>>> [`utc_offset`](#APIModule_utc_offset) UTC时区均时差计算 <br/>
+>>>> [`day_convert`](#APIModule_day_convert) 公历转换干支历 <br/>
 >
 > [`Rule`](#Rule) 格式规范<br/>
+> 
 >> [`MoYuStudio Python Code Rule`](#MoYuStudio_Python_Code_Rule) MoYuStudio Python代码编写格式规范<br/>
 >> [`MoYuStudio Name Rule`](#MoYuStudio_Name_Rule) MoYuStudio 命名格式规范<br/>
 >> [`MoYuStudio Git Commit Message Rule`](#MoYuStudio_Git_Commit_Message_Rule) MoYuStudio Git提交备注格式规范 (借鉴 Angular 团队的 Commit 规范)<br/>
+
 
 ## <span id = 'OfficialDocumentation'>`Official Documentation`</span> 官方文档
 
@@ -26,20 +33,26 @@
 
 #### <span id = 'APIModule'>`Module`</span> 模块
 
-#### <span id = 'API_day_convert'>`day_convert`</span> 公历转换干支历
+#### <span id = 'APIModule_utc_offset'>`utc_offset`</span> UTC时区均时差计算
 
-    功能： 公历转换干支历
+    功能： UTC时区均时差计算
 
-    实例化： DC = day_convert.DayConvert(datetime.datetime(year, month, day, hour, min, sec))
+    实例化： UO = utc_offset.UTCOffset()
 
     调用：
     
-    self.print()
-        打印 公历日期 和 干支历 
+        pass
 
-    self.set()
-        设置 一个变量 为 干支历 结果 list('str','str','str','str')
+##### <span id = 'APIModule_day_convert'>`day_convert`</span> 公历转换干支历
 
+    功能： 公历转换干支历
+
+    实例化： DC = day_convert.DayConvert(year, month, day, hour, min, sec)
+
+    调用：
+    
+        self.run()
+            转换干支历
 
 
 ##  <span id = 'Rule'>`Rule`</span> 格式规范
