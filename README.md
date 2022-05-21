@@ -37,20 +37,30 @@
 
     功能： UTC时区均时差计算
 
-    实例化： UO = utc_offset.UTCOffset()
+    实例化： uo = utc_offset.UTCOffset()
+
+    变量：
+        self.UTC [datetime.datetime] # UTC时间
+        self.LMT [datetime.datetime] # 本地时间
+        self.UTC_offset [float] # UTC时区均时差
+        self.true_solar_time [datetime.datetime] # 真太阳时
 
     调用：
-    
-        pass
+        None
 
 #### <span id = 'APIModule_day_convert'>`day_convert`</span> 公历转换干支历
 
     功能： 公历转换干支历
 
-    实例化： DC = day_convert.DayConvert(year, month, day, hour, min, sec)
+    实例化： dc = day_convert.DayConvert(year, month, day, hour, min, sec)
+
+    变量：
+        self.year_gan [str] # 年干
+        self.month_gan [str] # 月干
+        self.day_gan [str] # 日干
+        self.hour_gan [str] # 时干
 
     调用：
-    
         self.run()
             转换干支历
 

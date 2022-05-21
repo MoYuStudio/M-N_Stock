@@ -1,33 +1,30 @@
 
 #-*-coding:utf-8-*-
 
+import datetime
+
 import  sxtwl
 
 class DayConvert:
-    def __init__(self,YEAR = 2000, MONTH = 1, DAY = 1, HOUR = 0, MINUTE = 0, SECOND = 0):
+    def __init__(self,true_solar_time):
+        self.true_solar_time = true_solar_time
 
-        self.YEAR = YEAR
-        self.MONTH = MONTH
-        self.DAY = DAY
-        self.HOUR = HOUR
-        self.MINUTE = MINUTE
-        self.SECOND = SECOND
-
-        self.Gan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
-        self.Zhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
+        self.gan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
+        self.zhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
 
     def run(self):
-        self.DAY = sxtwl.fromSolar(int(self.YEAR), int(self.MONTH), int(self.DAY))
+        self.day = sxtwl.fromSolar(self.true_solar_time.year, self.true_solar_time.month, self.true_solar_time.day)
 
-        self.Y_TG = self.DAY.getYearGZ()
-        self.M_TG = self.DAY.getMonthGZ()
-        self.D_TG = self.DAY.getDayGZ()
-        self.H_TG = self.DAY.getHourGZ(int(self.HOUR))
+        self.y_tg = self.day.getYearGZ()
+        self.m_tg = self.day.getMonthGZ()
+        self.d_tg = self.day.getDayGZ()
+        self.h_tg = self.day.getHourGZ(self.true_solar_time.hour)
 
-        self.Year_Gan = self.Gan[self.Y_TG.tg] + self.Zhi[self.M_TG.dz]
-        self.Month_Gan = self.Gan[self.M_TG.tg] + self.Zhi[self.D_TG.dz]
-        self.Day_Gan = self.Gan[self.D_TG.tg] + self.Zhi[self.H_TG.dz]
-        self.HOUR_Gan = self.Gan[self.H_TG.tg] + self.Zhi[self.H_TG.dz]
+        self.year_gan = self.gan[self.y_tg.tg] + self.zhi[self.m_tg.dz]
+        self.month_gan = self.gan[self.m_tg.tg] + self.zhi[self.d_tg.dz]
+        self.day_gan = self.gan[self.d_tg.tg] + self.zhi[self.h_tg.dz]
+        self.hour_gan = self.gan[self.h_tg.tg] + self.zhi[self.h_tg.dz]
 
 if __name__ == '__main__':
-    pass
+    dc = DayConvert(datetime.datetime.utcnow().replace(tzinfo = datetime.timezone.utc))
+    dc.run()

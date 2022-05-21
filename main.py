@@ -3,3 +3,5 @@
 
 import module
 
+op = module.Output()
+op.run()
