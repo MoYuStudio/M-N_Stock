@@ -6,7 +6,14 @@ import datetime
 
 import tzlocal
 
-class UtcOffset:
+class UTCOffset:
+    """
+    the year of the true solar time.
+
+    :return: the year of the true solar time.
+    :rtype: int
+    
+    """
     def __init__(self):
 
         self.UTC = datetime.datetime.utcnow().replace(tzinfo = datetime.timezone.utc)

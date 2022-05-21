@@ -1,3 +1,3 @@
 
-from .utc_offset import UtcOffset
+from .utc_offset import UTCOffset
 from .day_convert import DayConvert
