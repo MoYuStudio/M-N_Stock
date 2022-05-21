@@ -5,8 +5,8 @@
 
     天人合一 玄学炒股 永远满仓 永远热泪盈眶 awe
 
-项目大纲：[Outline](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/outline)<br/>
-项目笔记：[Note](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/note)<br/>
+项目大纲: [Outline](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/outline)<br/>
+项目笔记: [Note](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/note)<br/>
 
 ## 引索
 
@@ -35,32 +35,32 @@
 
 #### <span id = 'APIModule_utc_offset'>`utc_offset`</span> UTC时区均时差计算
 
-    功能： UTC时区均时差计算
+    功能:  UTC时区均时差计算
 
-    实例化： uo = utc_offset.UTCOffset()
+    实例化:  uo = utc_offset.UTCOffset()
 
-    变量：
+    变量: 
         self.UTC [datetime.datetime] # UTC时间
         self.LMT [datetime.datetime] # 本地时间
         self.UTC_offset [float] # UTC时区均时差
         self.true_solar_time [datetime.datetime] # 真太阳时
 
-    调用：
+    调用: 
         None
 
 #### <span id = 'APIModule_day_convert'>`day_convert`</span> 公历转换干支历
 
-    功能： 公历转换干支历
+    功能:  公历转换干支历
 
-    实例化： dc = day_convert.DayConvert(year, month, day, hour, min, sec)
+    实例化:  dc = day_convert.DayConvert(year, month, day, hour, min, sec)
 
-    变量：
+    变量: 
         self.year_gan [str] # 年干
         self.month_gan [str] # 月干
         self.day_gan [str] # 日干
         self.hour_gan [str] # 时干
 
-    调用：
+    调用: 
         self.run()
             转换干支历
 
@@ -84,7 +84,7 @@
 
     每行代码尽量不超过 80 个字符(在特殊情况下可以略微超过 80 ，但最长不得超过 120)
 
-    理由：
+    理由: 
         这在查看 side-by-side 的 diff 时很有帮助
         方便在控制台下查看代码
         太长可能是设计有缺陷
@@ -151,7 +151,7 @@
 
     import语句应该放在文件头部，置于模块说明及docstring之后，于全局变量之前；
 
-    import语句应该按照顺序排列，库分三组：第一组是标准库，第二组是第三方库，第三组是自定义库，每组之间用一个空行分隔 
+    import语句应该按照顺序排列，库分三组: 第一组是标准库，第二组是第三方库，第三组是自定义库，每组之间用一个空行分隔 
 
         import os
         import sys
@@ -289,7 +289,7 @@
         "%s %s!" %
         ("Harry", "Potter")
 
-    禁止复合语句，即一行中包含多个语句：
+    禁止复合语句，即一行中包含多个语句: 
 
         # 正确的写法
 
@@ -301,7 +301,7 @@
 
             do_first();do_second();do_third();
 
-    if/for/while一定要换行：
+    if/for/while一定要换行: 
 
         # 正确的写法
 
@@ -314,7 +314,7 @@
 
 ##### docstring
 
-    docstring 的规范中最其本的两点：
+    docstring 的规范中最其本的两点: 
 
         所有的公共模块、函数、类、方法，都应该写 docstring 。私有方法不一定需要，但应该在 def 后提供一个块注释来说明。
 
@@ -345,7 +345,7 @@
 
 ### <span id = 'MoYuStudio_Git_Commit_Message_Rule'>`MoYuStudio Git Commit Message Rule`</span> MoYuStudio Git提交备注格式规范 (借鉴 Angular 团队的 Commit 规范)
 
-    每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。
+    每次提交，Commit message 都包括三个部分: Header，Body 和 Footer。
 
     其中，Header 是必需的，Body 和 Footer 可以省略。
 
@@ -353,23 +353,23 @@
 
 #### MoYuStudio Commit message | Header
 
-        Header部分只有一行，包括三个字段：type（必需）、scope（可选）和subject（必需）。
+        Header部分只有一行，包括三个字段: type（必需）、scope（可选）和subject（必需）。
 
     type 用于说明commit的类型，主要包括一下几种
 
-        feat：新功能（feature）
-        fix：修补bug
-        docs：文档（documentation）
-        style： 格式（不影响代码运行的变动）
-        refactor：重构（即不是新增功能，也不是修改bug的代码变动）
-        test：增加测试
-        chore：构建过程或辅助工具的变动
+        feat: 新功能（feature）
+        fix: 修补bug
+        docs: 文档（documentation）
+        style: 格式（不影响代码运行的变动）
+        refactor: 重构（即不是新增功能，也不是修改bug的代码变动）
+        test: 增加测试
+        chore: 构建过程或辅助工具的变动
 
-    scope用于说明commit的影响范围，可以随便填写任何东西，commitizen也给出了几个 如：location 、browser、compile；或者可以约定为：
+    scope用于说明commit的影响范围，可以随便填写任何东西，commitizen也给出了几个 如: location 、browser、compile；或者可以约定为: 
 
         [all] 表示影响面大 ，如修改了网络框架  会对真个程序产生影响
         [loation] 表示影响小，某个小小的功能
-        [module：xxx] 表示会影响某个模块 如登录模块、首页模块 、用户管理模块等等
+        [module: xxx] 表示会影响某个模块 如登录模块、首页模块 、用户管理模块等等
 
     subject是commit的简短描述
         
@@ -377,7 +377,7 @@
 
     Body 部分是对本次 commit 的详细描述，可以分成多行。
 
-    注意：
+    注意: 
         使用第一人称现在时，比如使用change而不是changed或changes。
         应该说明代码变动的动机，以及与以前行为的对比。
 
