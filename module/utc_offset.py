@@ -18,11 +18,11 @@ class UTCOffset:
 
         is_dst = time.daylight and time.localtime().tm_isdst > 0
         utc_offset = - (time.altzone if is_dst else time.timezone)
-        self.UTC_offset = utc_offset / 3600
+        self.UTC_offset = utc_offset 
 
         self.LMT = datetime.datetime.now()
         self.UTC = datetime.datetime.utcnow().replace(tzinfo = datetime.timezone.utc)
-        self.true_solar_time = self.UTC - datetime.timedelta(seconds = self.UTC_offset)
+        self.true_solar_time = self.LMT - datetime.timedelta(seconds = self.UTC_offset)
 
 if __name__ == '__main__':
     uo = UTCOffset()

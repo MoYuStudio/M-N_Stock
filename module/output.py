@@ -1,4 +1,6 @@
 
+#-*-coding:utf-8-*-
+
 from . import utc_offset
 from . import day_convert
 
