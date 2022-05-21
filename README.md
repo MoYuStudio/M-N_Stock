@@ -5,8 +5,8 @@
 
     天人合一 玄学炒股 永远满仓 永远热泪盈眶 awe
 
-[Outline](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/outline)
-[Note](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/note)
+项目大纲：[Outline](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/outline)<br/>
+项目笔记：[Note](https://github.com/MoYuStudio/M-N_Stock/blob/main/note/note)<br/>
 
 ## 引索
 
