@@ -14,9 +14,9 @@ Pypl install :
     Unix/MacOS/Linux
     pip3 install -r note/package.txt
 
-    pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note/package.txt
+    pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note/dev/package.txt
 
     Windows
     pip install -r note\package.txt
 
-    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note\package.txt
+    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note\dev\package.txt

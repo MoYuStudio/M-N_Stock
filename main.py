@@ -1,7 +1,7 @@
 
 #-*-coding:utf-8-*-
 
-import module
+import src.module as m
 
-op = module.Output()
+op = m.Output()
 op.run()

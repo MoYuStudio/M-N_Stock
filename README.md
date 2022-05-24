@@ -351,7 +351,7 @@
 
     不管是哪一个部分，任何一行都不得超过72个字符（或100个字符-自定义）。这是为了避免自动换行影响美观。
 
-#### MoYuStudio Commit message | Header
+#### Header
 
         Header部分只有一行，包括三个字段: type（必需）、scope（可选）和subject（必需）。
 
@@ -373,7 +373,7 @@
 
     subject是commit的简短描述
         
-#### MoYuStudio Commit message | Body
+#### Body
 
     Body 部分是对本次 commit 的详细描述，可以分成多行。
 
@@ -381,7 +381,7 @@
         使用第一人称现在时，比如使用change而不是changed或changes。
         应该说明代码变动的动机，以及与以前行为的对比。
 
-#### MoYuStudio Commit message | Footer
+#### Footer
 
     可以描写备注；如果是 bug ，可以把bug id放入
 
