@@ -1,4 +1,17 @@
+分析大纲 Analysis outline
+
+	验证干支历法对记录星象的准确性和可靠性 Test Ganzhi astronomical timing system's reliability and accuracy on it's record abilities on planet patterns
+
+	将干支历法中每个干支日代表的星象记录到数据库中 Construct database to store planet patterns correlate to each Ganzhi date
+
+	计算出各种星象所发生的干支日期 Calculate the date for different patterns to occur
+
+	根据各个星象计算其与股市回报波动率的相关性 Calculate the correlations between different planet patterns and stock return volatilities
+
+	根据进一步假设计算干支组合与股市回报波动率的相关性 Calculate the correlations between Ganzhi combinations and stock return volatilities based on further hypothesis
+
 分析预备项 Preparation
+
 	二维星图 2D Planet/Stellar map
 		十二宫划分 Divide ecliptic map with zodiac
 		确定节气点 Determine coordinates for Jie and Qi
@@ -14,6 +27,7 @@
 		根据真太阳时转换成干支历（年月日时） Convert date and time into Ganzhi date and time base on true solar time (year, month, day, hour)
 
 行星数据 Astronomical data:
+
 	采集对象为七政行星：日月金木水火土 Sample targets: the Sun, Moon, Venus, Jupiter, Mercury, Mars, Saturn
 
 	赤道坐标轴转换为黄道坐标轴 Convert raw coordinates system into ecliptic coordinate system
@@ -22,7 +36,7 @@
 
 	干支天文历验证和数据录入 Reliability test for Ganzhi astronomical timing system and data inputs
 		干支天文历六十年一小循环 Ganzhi astronomical calender perform a small cycle every 60 years
-		故假设为相同干支日期行星星象相似 Hypothesis 1 is the planet patterns is similar for the same date
+		故假设为相同干支日期行星星象相似 So hypothesis is the planet patterns will be similar for the same Ganzhi date
 			容差 (度数） errors allowed (degree)：
 
 		录入每个干支日所代表的星象 Correlate planet patterns to each Ganzhi date
@@ -35,6 +49,7 @@
 			...
 			
 股市数据 Stock data:
+
 	计算股市回报波动率 长度：日和月 calculate stock return volatility. Length: Daily and monthly
 
 相关性分析 Correlational analysis:
