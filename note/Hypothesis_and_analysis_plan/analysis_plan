@@ -1,0 +1,42 @@
+分析预备项 Preparation
+	二维星图 2D Planet/Stellar map
+		十二宫划分 Divide ecliptic map with zodiac
+		确定节气点 Determine coordinates for Jie and Qi
+
+行星数据 Astro data:
+	采集对象为七政行星：日月金木水火土 Analyses target: the Sun, Moon, Venus, Jupiter, Mercury, Mars, Saturn.
+
+	赤道坐标轴转换为黄道坐标轴 Transfer raw data into ecliptic coordinate system.
+
+	黄道三维坐标转换为二维坐标 Convert 3D coord into 2D.
+
+	干支天文历验证和数据录入 Reliability test for Ganzhi astronomical calender system and data inputs.
+		干支天文历六十年一小循环 Ganzhi astronomical calender perform a small cycle every 60 years.
+		故假设为相同干支日期行星星象相似 Hypothesis 1 is the planet patterns is similar for the same date.
+			容差 (度数） errors (degree)：
+
+		录入每个干支日所代表的星象 Correlate the planet patterns to each Ganzhi date.
+		计算重复干支日期的行星角度误差 Calculate planet coordinate errors for repeated Ganzhi date.
+
+	星象计算（出现日期） Pattern calculate (occur date)
+		星象表 Pattern list:
+			土木相合
+			土木相对
+
+股市数据 Stock data:
+	计算股市回报波动率 长度：日和月 calculate return volatility. Length: Daily and monthly.
+
+相关性分析 Correlational analysis:
+	
+
+
+
+
+
+
+
+
+
+
+
+	
