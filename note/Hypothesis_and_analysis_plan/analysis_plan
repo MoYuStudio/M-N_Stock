@@ -3,6 +3,12 @@
 		十二宫划分 Divide ecliptic map with zodiac
 		确定节气点 Determine coordinates for Jie and Qi
 
+	真太阳时纠正 true solar time correction
+		根据经纬度纠正政策时间以获取当地天文时间 convert local political time into astronomical time based on longitude and latitude
+	
+	干支历转换 Ganzhi astronomical calender convert
+		根据真太阳时转换成干支历（年月日时） Convert date and time to Ganzhi date and time base on true solar time (year, month, day, hour)
+
 行星数据 Astro data:
 	采集对象为七政行星：日月金木水火土 Analyses target: the Sun, Moon, Venus, Jupiter, Mercury, Mars, Saturn.
 
@@ -22,7 +28,9 @@
 		星象表 Pattern list:
 			土木相合
 			土木相对
-
+			月相
+			...
+			
 股市数据 Stock data:
 	计算股市回报波动率 长度：日和月 calculate return volatility. Length: Daily and monthly.
 
