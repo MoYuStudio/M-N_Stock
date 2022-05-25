@@ -19,8 +19,12 @@ https://en.wikipedia.org/wiki/UTC_offset
 
 
 # Python ===========================================================
+
     天文学常用python库(持续更新)
     https://zhuanlan.zhihu.com/p/368632522
+    
+    史上最全的Python定量金融三方库汇总
+    https://blog.csdn.net/weixin_42731853/article/details/108832458
 
 # pytz
     https://pypi.org/project/pytz/
@@ -29,3 +33,6 @@ https://en.wikipedia.org/wiki/UTC_offset
 # PyEphem
     天文计算PyEphem指南 https://blog.sciencenet.cn/blog-255662-287895.html
     用天文ephem库计算一些有意思的天象 https://zhuanlan.zhihu.com/p/95628951
+
+# baostock
+    证券宝www.baostock.com是一个免费、开源的证券数据平台

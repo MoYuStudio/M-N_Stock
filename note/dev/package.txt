@@ -1,10 +1,14 @@
 
-# pytz == deprecation-shim-0.1.0.post0 
-
 # pytz == 2022.1
 # tzdata == 2022.1 
 # tzlocal == 4.2
 
+# 数据可视化html
 bokeh == 2.4.3
-
+# 干支历转换
 sxtwl == 2.0.6
+# 数据分析
+pandas == 1.4.2
+pandas_datareader == 0.10.0
+
+
