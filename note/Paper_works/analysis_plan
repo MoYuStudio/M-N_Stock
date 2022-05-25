@@ -1,5 +1,9 @@
+#-*-coding:utf-8-*-
 
-# 分析大纲 Analysis outline
+此文档包含关于此项目的大纲以及实现其的子步骤
+This file include the outline for this project and steps to achieve them
+
+# 项目大纲 Project outline
 
 	验证干支历法对记录星象的准确性和可靠性 Test Ganzhi astronomical timing system's reliability and accuracy on it's record abilities on planet patterns
 
@@ -45,10 +49,11 @@
 	均时差纠正 Corrections of the equation of time
 		根据太阳位置纠正天文时间 Adjust astronomical time base on the location of the Sun
 
-	农历转换 Convert into lunisolar calender
+	农历转换 Convert into lunisolar calendar
 		#未完成
 
 	干支历转换 Convert into Ganzhi astronomical timing system
+	
 		星象转换 Convert using planet patterns
 
 			年由太阳位置进位 Year is carried by the Sun
@@ -64,15 +69,20 @@
 			#等待理论公式
 	
 	干支天文历验证
-		干支天文历六十年一小循环 Ganzhi astronomical calender perform a small cycle every 60 years
-		故假设为相同干支日期行星星象相似 So hypothesis is the planet patterns will be similar for the same Ganzhi date
-			容差 (度数） errors allowed (degree)：
+
+		理论 Theory
+			干支天文历六十年一小循环 Ganzhi astronomical calendar perform a small cycle every 60 years
+
+		假设 Hypothesis
+			故假设为相同干支日期行星星象相似 So hypothesis is the planet patterns will be similar for the same Ganzhi date
+				容差 (度数） errors allowed (degree)：
+
+		验证 Test
+			计算重复干支日期的行星角度误差 Calculate planet coordinate errors for repeated Ganzhi date
 
 # 干支天文历数据库建立 
 
 	录入每个干支日所代表的星象 Correlate planet patterns to each Ganzhi date
-
-	计算重复干支日期的行星角度误差 Calculate planet coordinate errors for repeated Ganzhi date
 
 # 股市数据 Stock data:
 
