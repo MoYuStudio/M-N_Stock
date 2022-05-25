@@ -93,6 +93,11 @@
         start_date [str] # 开始日期
         end_date [str] # 结束日期
 
+        eg:
+            si = stock_info.StockInfo('000001.SZ', '2019-01-01', '2019-01-31')
+                or
+            stock_info = stock_info.StockInfo('AAPL', '2000-01-01', '2022-01-31')
+
     变量: 
         self.stock_symbol [str] # 股票代码
         self.start_date [str] # 开始日期
@@ -102,7 +107,7 @@
         self.data_dict_keys [list] # 股票信息 dict 格式的 keys
 
     调用: 
-        None
+        self.print_all() # 打印该股票的所有信息
 
 ##  <span id = 'Rule'>`Rule`</span> 格式规范
 
