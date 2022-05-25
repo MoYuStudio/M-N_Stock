@@ -4,8 +4,6 @@
 import time
 import datetime
 
-import tzlocal
-
 class UTCOffset:
     """
     the year of the true solar time.

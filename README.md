@@ -19,6 +19,8 @@
 >>>
 >>>> [`utc_offset`](#APIModule_utc_offset) UTC时区均时差计算 <br/>
 >>>> [`day_convert`](#APIModule_day_convert) 公历转换干支历 <br/>
+>>>> [`output`](#APIModule_output) 输出 <br/>
+>>>> [`stock_info`](#APIModule_stock_info) 股票信息获取 <br/>
 >
 > [`Rule`](#Rule) 格式规范<br/>
 > 
@@ -37,7 +39,8 @@
 
     功能:  UTC时区均时差计算
 
-    实例化:  uo = utc_offset.UTCOffset()
+    实例化:
+        uo = utc_offset.UTCOffset()
 
     变量: 
         self.UTC [datetime.datetime] # UTC时间
@@ -52,7 +55,10 @@
 
     功能:  公历转换干支历
 
-    实例化:  dc = day_convert.DayConvert(year, month, day, hour, min, sec)
+    实例化:
+        dc = day_convert.DayConvert(true_solar_time)
+
+        true_solar_time [datetime.datetime] # 真太阳时
 
     变量: 
         self.year_gan [str] # 年干
@@ -61,9 +67,42 @@
         self.hour_gan [str] # 时干
 
     调用: 
-        self.run()
-            转换干支历
+        self.run() # 转换干支历
 
+#### <span id = 'APIModule_output'>`output`</span> 输出
+
+    功能:  输出
+
+    实例化:
+        op = output.Output()
+
+    变量:
+        None
+
+    调用:
+        self.run() # 输出
+
+#### <span id = 'APIModule_stock_info'>`stock_info`</span> 股票信息获取
+
+    功能:  股票信息获取
+
+    实例化:
+        si = stock_info.StockInfo(stock_symbol, start_date, end_date)
+
+        stock_symbol [str] # 股票代码
+        start_date [str] # 开始日期
+        end_date [str] # 结束日期
+
+    变量: 
+        self.stock_symbol [str] # 股票代码
+        self.start_date [str] # 开始日期
+        self.end_date [str] # 结束日期
+        self.stock_data_pd [pandas.DataFrame] # 股票信息 pandas.DataFrame 格式
+        self.data_dict [dict] # 股票信息 dict 格式
+        self.data_dict_keys [list] # 股票信息 dict 格式的 keys
+
+    调用: 
+        None
 
 ##  <span id = 'Rule'>`Rule`</span> 格式规范
 
