@@ -52,21 +52,6 @@ This file focus on the logic and astronomical phenomenon behind different calend
 
         同为用十二之数 但不参考于天星
 
-    # 干支纪法
-
-        十天干：甲乙丙丁戊己庚辛壬癸
-        十二地支：子丑寅卯辰巳午未申酉戌亥
-
-        一天干配一地支 一一配对而成六十甲子
-        此纪法只用于长期纪年
-
-# 纪月
-    
-
-
-
-
-
 # 闰月
 
     # 看看别人怎么闰
@@ -87,12 +72,14 @@ This file focus on the logic and astronomical phenomenon behind different calend
 
         中国阴阳合历
 
+            日历规则
+                包含冬至的月份为一年中的首月（十一月）
 
-# 干支闰月
+                日长
+                    地球自转一周24小时故一日为二十四小时
+                
+                
 
-        # 天文现象
-
-        # 怎么闰
-
+# 干支历
 
         
