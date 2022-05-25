@@ -48,9 +48,6 @@ This file include the outline for this project and steps to achieve them
 	均时差纠正 Corrections of the equation of time
 		根据太阳位置纠正天文时间 Adjust astronomical time base on the location of the Sun
 
-	农历转换 Convert into lunisolar calendar
-		#未完成
-
 	干支历转换 Convert into Ganzhi astronomical timing system
 	
 		星象转换 Convert using planet patterns
@@ -59,10 +56,7 @@ This file include the outline for this project and steps to achieve them
 				太阳在黄道经过'春分'点时进位 Indent when the Sun pass the spring equinox
 
 			月由太阳位置进位 Month is carried by the Sun
-				闰月 Leap month
-					#等待农历转换
-				无闰月
-					太阳在黄道通过'节'点时进位 Indent when the Sun pass the point of 'Jie'
+				太阳在黄道通过'节'点时进位 Indent when the Sun pass the point of 'Jie'
 		
 		推测/公式转换 Convert using estimated formula
 			#等待理论公式
