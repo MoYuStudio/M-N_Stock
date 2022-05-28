@@ -3,7 +3,7 @@ import math
 
 from bokeh.plotting import figure, output_file, show
  
-output_file('src_html/offset.html')
+output_file('src/test/html/offset.html')
  
 p = figure(plot_width=700, plot_height=700)
 

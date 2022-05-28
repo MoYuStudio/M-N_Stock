@@ -1,0 +1,1 @@
+pyuic5 -o src\module\gui\gui.py src\module\gui\gui.ui
