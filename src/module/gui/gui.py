@@ -18,6 +18,9 @@ class Ui_Window(object):
         self.dateTimeEdit = QtWidgets.QDateTimeEdit(Window)
         self.dateTimeEdit.setGeometry(QtCore.QRect(60, 30, 181, 21))
         self.dateTimeEdit.setObjectName("dateTimeEdit")
+        self.pushButton = QtWidgets.QPushButton(Window)
+        self.pushButton.setGeometry(QtCore.QRect(270, 30, 75, 23))
+        self.pushButton.setObjectName("pushButton")
 
         self.retranslateUi(Window)
         QtCore.QMetaObject.connectSlotsByName(Window)
@@ -25,3 +28,4 @@ class Ui_Window(object):
     def retranslateUi(self, Window):
         _translate = QtCore.QCoreApplication.translate
         Window.setWindowTitle(_translate("Window", "M&N Stock"))
+        self.pushButton.setText(_translate("Window", "ok"))
