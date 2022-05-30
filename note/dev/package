@@ -3,11 +3,14 @@
 # tzdata == 2022.1 
 # tzlocal == 4.2
 
-# 数据可视化html
+# QT User Interface
+pyqt5 == 5.15.6
+# Html User Interface
 bokeh == 2.4.3
-# 干支历转换
+
+# Gan&Zhi
 sxtwl == 2.0.6
-# 数据分析
+# datareader
 pandas == 1.4.2
 pandas_datareader == 0.10.0
 
