@@ -12,6 +12,8 @@ class DayConvert:
         self.gan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
         self.zhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
 
+        self.run()
+
     def run(self):
         self.day = sxtwl.fromSolar(self.true_solar_time.year, self.true_solar_time.month, self.true_solar_time.day)
 
@@ -27,4 +29,3 @@ class DayConvert:
 
 if __name__ == '__main__':
     dc = DayConvert(datetime.datetime.utcnow().replace(tzinfo = datetime.timezone.utc))
-    dc.run()

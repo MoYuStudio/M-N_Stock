@@ -17,7 +17,7 @@
 >>
 >>> [`Module`](#APIModule) 模块<br/>
 >>>
->>>> [`utc_offset`](#APIModule_utc_offset) UTC时区均时差计算 <br/>
+>>>> [`equation_of_time`](#APIModule_equation_of_time) 均时差计算 <br/>
 >>>> [`day_convert`](#APIModule_day_convert) 公历转换干支历 <br/>
 >>>> [`output`](#APIModule_output) 输出 <br/>
 >>>> [`stock_info`](#APIModule_stock_info) 股票信息获取 <br/>
@@ -35,21 +35,27 @@
 
 #### <span id = 'APIModule'>`Module`</span> 模块
 
-#### <span id = 'APIModule_utc_offset'>`utc_offset`</span> UTC时区均时差计算
+#### <span id = 'APIModule_equation_of_time'>`equation_of_time`</span> 均时差计算
 
-    功能:  UTC时区均时差计算
+    功能:  均时差计算
 
     实例化:
-        uo = utc_offset.UTCOffset()
+        eot = equation_of_time.EquationOfTime(year,month,day,hour,minute,second,timezone='Asia/Shanghai')
 
     变量: 
-        self.UTC [datetime.datetime] # UTC时间
-        self.LMT [datetime.datetime] # 本地时间
-        self.UTC_offset [float] # UTC时区均时差
-        self.true_solar_time [datetime.datetime] # 真太阳时
+        self.leap_year_info [Boolean] 是否闰年
+
+        self.year [Integer] 年
+        self.month [Integer] 月
+        self.day [Integer] 日
+        self.hour [Integer] 时
+        self.minute [Integer] 分
+        self.second [Integer] 秒
+
+        self.timezone [String] 时区
 
     调用: 
-        None
+        self.true_solar_offset_display() # 输出均时差公式图表
 
 #### <span id = 'APIModule_day_convert'>`day_convert`</span> 公历转换干支历
 
@@ -67,7 +73,7 @@
         self.hour_gan [str] # 时干
 
     调用: 
-        self.run() # 转换干支历
+        None
 
 #### <span id = 'APIModule_output'>`output`</span> 输出
 

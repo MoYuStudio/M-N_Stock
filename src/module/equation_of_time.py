@@ -8,7 +8,7 @@ import matplotlib.pyplot
 
 import pytz
 
-class Equation_of_time:
+class EquationOfTime:
     def __init__(self,year,month,day,hour,minute,second,timezone='Asia/Shanghai'):
         self.leap_year_info = None
         self.year_days = None
@@ -67,13 +67,5 @@ class Equation_of_time:
         matplotlib.pyplot.plot(self.offset_day,self.offset_offset)
         matplotlib.pyplot.show()
         
-    def output_print(self):
-        print('时间 TIME : '+str(self.time_datetime))
-        print('夏令时 DST : '+str(self.dst_offset_time))
-        print('夏令时 UTC : '+str(self.time_datetime + self.dst_offset_time))
-        print('偏移量 OFFSET : '+str(self.true_solar_second_offset))
-        print('真太阳时 TRUE SOLAR TIME : '+str(self.true_solar_time))
-
 if __name__ == '__main__':
-    eot = Equation_of_time(2000,7,1,0,0,0,timezone='Europe/London')
-    eot.output_print()
+    eot = EquationOfTime(2000,7,1,0,0,0,timezone='Europe/London')
