@@ -1,5 +1,6 @@
 
 pytz == 2022.1
+
 # tzdata == 2022.1 
 # tzlocal == 4.2
 
@@ -7,6 +8,8 @@ pytz == 2022.1
 pyqt5 == 5.15.6
 # Html User Interface
 bokeh == 2.4.3
+# User Interface
+matplotlib == 3.5.2
 
 # Gan&Zhi
 sxtwl == 2.0.6

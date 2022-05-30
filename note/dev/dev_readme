@@ -12,7 +12,7 @@ Pypl install :
     pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
     Unix/MacOS/Linux
-    pip3 install -r note/package
+    pip3 install -r note/dev/package
 
     pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r note/dev/package
 
