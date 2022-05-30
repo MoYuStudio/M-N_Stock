@@ -16,6 +16,20 @@
 >> [`Data`](#Data) 数据<br/>
 >>
 >>> [`Data Timezones`](#DataTimezones) 数据<br/>
+>>>> [`Africa`](#DataTimezones_Africa) Africa<br/>
+>>>> [`America`](#DataTimezones_America) America<br/>
+>>>> [`Antarctica`](#DataTimezones_Antarctica) Asia<br/>
+>>>> [`Arctic`](#DataTimezones_Asia) Arctic<br/>
+>>>> [`Asia`](#DataTimezones_Asia) Asia<br/>
+>>>> [`Atlantic`](#DataTimezones_Atlantic) Atlantic<br/>
+>>>> [`Australia`](#DataTimezones_Australia) Australia<br/>
+>>>> [`Brazil`](#DataTimezones_Brazil) Brazil<br/>
+>>>> [`Canada`](#DataTimezones_Canada) Canada<br/>
+>>>> [`Europe`](#DataTimezones_Europe) Europe<br/>
+>>>> [`Indian`](#DataTimezones_Indian) Indian<br/>
+>>>> [`Pacific`](#DataTimezones_Pacific) Pacific<br/>
+>>>> [`UTC`](#DataTimezones_UTC) UTC<br/>
+>>>> [`Other`](#DataTimezones_Other) Other<br/>
 >>
 >> [`API`](#API) 接口<br/>
 >>
@@ -459,30 +473,6 @@
     'Chile/Continental',
     'Chile/EasterIsland',
 
-##### <span id = 'DataTimezones_Cuba'>`Data Timezones : Cuba`</span> Cuba
-
-    'Cuba',
-
-##### <span id = 'DataTimezones_EET'>`Data Timezones : EET`</span> EET
-
-    'EET',
-
-##### <span id = 'DataTimezones_EST'>`Data Timezones : EST`</span> EST
-
-    'EST',
-
-##### <span id = 'DataTimezones_EST5EDT'>`Data Timezones : EST5EDT`</span> EST5EDT
-
-    'EST5EDT',
-
-##### <span id = 'DataTimezones_Egypt'>`Data Timezones : Egypt`</span> Egypt
-
-    
-
-##### <span id = 'DataTimezones_Eire'>`Data Timezones : Eire`</span> Eire
-
-    'Eire',
-
 ##### <span id = 'DataTimezones_Etc'>`Data Timezones : Etc`</span> Etc
 
     'Etc/GMT',
@@ -702,22 +692,21 @@
 
 ##### <span id = 'DataTimezones_Other'>`Data Timezones : Other`</span> Other
 
-    
     'CET',
     'CST6CDT',
-
+    'Cuba',
+    'EET',
+    'EST',
+    'EST5EDT',
+    'Eire',
     'HST',
-
     'NZ',
     'NZ-CHAT',
-
     'MET',
     'MST',
     'MST7MDT',
-    
     'PRC',
     'PST8PDT',
-
     'ROC',
     'ROK',
     'Universal',
