@@ -31,7 +31,18 @@ This file include the outline for this project and steps to achieve them
 		二十四宫划分 Divide the map into 24 equal parts
 			确定节气点 Determine coordinates for 'Jie' and 'Qi'
 
-	星象计算（出现日期） Pattern calculate (occur date)
+	构造模型以根据已有数据推算未知数据 Construct module to inference unknown data based on known data
+
+		补全已有数据集中缺失数据 Fill up missing data in known data set
+		计算行星到达指定坐标的准确时刻 (秒) Calculate exact time the planet react a coordinate (second)
+
+		推算过去和未来某时刻某星体的准确位置 Calculate the exact time the exact planet will reach a given coordinate
+		推算过去和未来某星体在某位置出现的准确时刻 Calculate the exact coordinate the exact planet will reach on a given time
+
+	星象计算（出现日期 时刻） Pattern calculate (occur date and time)
+
+		类上，计算指定的单颗或多颗行星会到达指定地点或形成指定模式的准确时间 Similar to above, calculate the exact time one or multiple planets will reach certain location or form certain pattern
+		
 		星象表 Pattern list:
 			土木相合/相对
 			月相
@@ -59,21 +70,22 @@ This file include the outline for this project and steps to achieve them
 				太阳在黄道通过'节'点时进位 Indent when the Sun pass the point of 'Jie'
 		
 		推测/公式转换 Convert using estimated formula
-			#等待理论公式
+			根据上方的星体位置推算模型推算太阳位置 Use planet coordinate inference module to calculate coordinate of the sun
 	
-	干支天文历验证
+	干支天文历验证 Ganzhi reliability verify
 
 		理论 Theory
 			干支天文历六十年一小循环 Ganzhi astronomical calendar perform a small cycle every 60 years
 
 		假设 Hypothesis
 			故假设为相同干支日期行星星象相似 So hypothesis is the planet patterns will be similar for the same Ganzhi date
-				容差 (度数） errors allowed (degree)：
+				容差 (度数） errors allowed (degree): 3
+				参考容差取自风水分金一格的度数 Reference taken from the smallest unit used in Fengshui measuring
 
 		验证 Test
 			计算重复干支日期的行星角度误差 Calculate planet coordinate errors for repeated Ganzhi date
 
-# 干支天文历数据库建立 
+# 干支天文历数据库建立 Construct Ganzhi database
 
 	录入每个干支日所代表的星象 Correlate planet patterns to each Ganzhi date
 
@@ -81,6 +93,5 @@ This file include the outline for this project and steps to achieve them
 
 	计算股市回报波动率 长度：日和月 calculate stock return volatility. Length: Daily and monthly
 
-# 相关性分析 Correlational analysis:
-	
+# 干支理论构造 Construct Ganzhi based theory
 
