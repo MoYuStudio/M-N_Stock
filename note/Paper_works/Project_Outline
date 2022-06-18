@@ -45,7 +45,9 @@ This file include the outline for this project and steps to achieve them
 		
 		星象表 Pattern list:
 			土木相合/相对
+			各星的视运动状态(顺行, 逆行, 停留)
 			月相
+			日象
 			...
 
 # 干支历准确性与可靠性测试 Reliability and accuracy test for the Ganzhi astronomical timing system
