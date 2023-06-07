@@ -7,7 +7,7 @@ from . import equation_of_time
 from . import day_convert
 
 class CSVDataConversion:
-    def __init__(self, folder_path = 'src/module/data/transferred.csv'):
+    def __init__(self, folder_path = 'src/module/data/Astrostock_Model/Preliminal_Screening/Transformed_Data/transferred.csv'):
         
         self.folder_path = folder_path
         
