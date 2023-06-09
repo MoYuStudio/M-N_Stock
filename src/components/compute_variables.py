@@ -1,11 +1,13 @@
-import pandas as pd
+
 import csv
 from datetime import datetime
 import tempfile
 import shutil
 import math
 
-CSV_tf = ".\Transformed_Data\Transferred.csv"
+import pandas as pd
+
+csv_tf = 'data/transformed_data/transferred.csv'
 
 #! Convert date
 
@@ -15,12 +17,12 @@ def parse_date(old_date):
     return new_date
 
 def rewrite_dates():
-    with open(CSV_tf, 'r') as original_file:
+    with open(csv_tf, 'r') as original_file:
         reader = csv.reader(original_file)
         next(reader)
         rows = [[parse_date(row[0])] + row[1:] for row in reader]
 
-    with open(CSV_tf, 'w', newline='') as original_file:
+    with open(csv_tf, 'w', newline='') as original_file:
         writer = csv.writer(original_file)
         writer.writerow(['Date', 'R.A._ICRF', 'DEC_ICRF', 'delta', 'deldot'])
 
@@ -32,7 +34,7 @@ rewrite_dates()
 #! Opposition
 
 def compute_oppositions():
-    data = pd.read_csv(CSV_tf)
+    data = pd.read_csv(csv_tf)
 
     data['delta'] = pd.to_numeric(data['delta'])
 
@@ -42,14 +44,14 @@ def compute_oppositions():
     data['Opposition'] = data['Opposition'].mask((data['Opposition'] == 2) & (data['Opposition'].shift() == 1), 3)
     data['Opposition'] = data['Opposition'].mask((data['Opposition'] == 1) & (data['Opposition'].shift() == 2), 4)
 
-    data.to_csv(CSV_tf, index=False)
+    data.to_csv(csv_tf, index=False)
 
 compute_oppositions()
 
 #! Cartesian coordinates
 
 def rewrite_dates_and_add_cartesian():
-    filename = CSV_tf
+    filename = csv_tf
 
     with tempfile.NamedTemporaryFile(mode='w+', delete=False, newline='') as temp_file, open(filename, 'r', newline='') as original_file:
         reader = csv.DictReader(original_file)
@@ -83,7 +85,7 @@ rewrite_dates_and_add_cartesian()
 #! Ecliptic coordinates
 
 def add_ecliptic_coordinates():
-    filename = CSV_tf
+    filename = csv_tf
     
     epsilon = math.radians(-23.439281)
 
@@ -117,7 +119,7 @@ add_ecliptic_coordinates()
 #! Polar coordinates
 
 def add_polar_coordinates():
-    filename = CSV_tf
+    filename = csv_tf
 
     with tempfile.NamedTemporaryFile(mode='w+', delete=False, newline='') as temp_file, open(filename, 'r', newline='') as original_file:
         reader = csv.DictReader(original_file)

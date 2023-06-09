@@ -1,3 +1,4 @@
+
 import csv
 import re
 import tkinter as tk
@@ -10,7 +11,7 @@ root.withdraw()
 input_path = filedialog.askopenfilename(title = "Select Horizons coordinate file", filetypes=[("Text files", "*.txt")])
 
 # Output_path
-CSV_tf = "Transformed_Data\Transferred.csv" 
+csv_tf = 'data/transformed_data/transferred.csv'
 
 # Define the headers
 headers = [
@@ -55,7 +56,7 @@ for line in lines:
         data.append(data_line)
 
 # Export to CSV
-with open(CSV_tf, 'w', newline='') as output_file:
+with open(csv_tf, 'w', newline='') as output_file:
     writer = csv.DictWriter(output_file, fieldnames=headers)
     writer.writeheader()
     writer.writerows(data)
