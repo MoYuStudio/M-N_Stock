@@ -15,7 +15,8 @@ def file_merge():
     root = tk.Tk()
     root.withdraw()
 
-    Stock_file = filedialog.askopenfilename(title = "Select stock data file", filetypes=[("Excel files", "*.xlsx *.csv")]) #NOTE
+    default_dir = "data/raw_data/stock"
+    Stock_file = filedialog.askopenfilename(initialdir = default_dir, title = "Select stock data file", filetypes=[("Excel files", "*.xlsx *.csv")]) #NOTE
 
     # Merge according to date
     Stock_df = pd.read_excel(Stock_file)

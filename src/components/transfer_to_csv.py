@@ -8,7 +8,8 @@ from tkinter import filedialog
 root = tk.Tk()
 root.withdraw()
 
-input_path = filedialog.askopenfilename(title = "Select Horizons coordinate file", filetypes=[("Text files", "*.txt")])
+default_dir = "data/raw_data/horizons"
+input_path = filedialog.askopenfilename(initialdir = default_dir, title = "Select Horizons coordinate file", filetypes=[("Text files", "*.txt")])
 
 # Output_path
 csv_tf = 'data/transformed_data/transferred.csv'
