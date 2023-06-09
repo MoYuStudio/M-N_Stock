@@ -132,5 +132,13 @@ dmypy.json
 .pyre/
 
 # temp csv file
-data/transformed_data/*
+# data/transformed_data/**
+data/transformed_data/transferred.csv 
+data/transformed_data/merged.csv 
+data/transformed_data/dropped.csv 
+
+
+
+
+
 
