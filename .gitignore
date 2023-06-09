@@ -132,5 +132,5 @@ dmypy.json
 .pyre/
 
 # temp csv file
-data/transformed_data/**
+data/transformed_data/*
 
