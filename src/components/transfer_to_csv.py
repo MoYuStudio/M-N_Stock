@@ -1,8 +1,23 @@
 
 import csv
 import re
+import os
 import tkinter as tk
 from tkinter import filedialog
+
+# Delete existing files
+old_files = ['data/transformed_data/transferred.csv', 'data/transformed_data/merged.csv', 'data/transformed_data/dropped.csv']
+
+for old_files in old_files:
+
+    try:
+        os.remove(old_files)
+    except FileNotFoundError:
+        print(f'file not found')
+    except PermissionError:
+        print(f'Permission denied')
+    except Exception as e:
+        print(f'Error: {e} - while deleting old files')
 
 # File selector 
 root = tk.Tk()
