@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-CSV_tf = "Z:\\desktop\\Transferred.csv"
+CSV_tf = 'data/transformed_data/transferred.csv'
 
 data = pd.read_csv(CSV_tf)
 

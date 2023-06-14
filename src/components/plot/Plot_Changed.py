@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-dropped_file = "Z:\\desktop\\Dropped.csv"
+dropped_file = 'data/transformed_data/dropped.csv'
 
 data = pd.read_csv(dropped_file)
 
