@@ -1,10 +1,10 @@
 
 import tkinter as tk
 from tkinter import filedialog
-
 import pandas as pd
 
-csv_tf = 'data/transformed_data/transferred.csv'
+csv_tf = 'data/transformed_data/transferred.csv' # default: 'data/transformed_data/transferred.csv'
+
 merged_file = 'data/transformed_data/merged.csv'
 dropped_file = 'data/transformed_data/dropped.csv'
 

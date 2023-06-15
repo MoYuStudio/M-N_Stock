@@ -13,7 +13,7 @@ for old_files in old_files:
     try:
         os.remove(old_files)
     except FileNotFoundError:
-        print(f'{old_files}] not found')
+        print(f'{old_files} not found')
     except PermissionError:
         print(f'Permission denied')
         exit()

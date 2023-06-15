@@ -1,7 +1,14 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import tkinter as tk
+from tkinter import filedialog
 
-CSV_tf = 'data/transformed_data/transferred.csv'
+root = tk.Tk()
+root.withdraw()
+
+default_dir = "data/transformed_data/"
+CSV_tf = filedialog.askopenfilename(initialdir = default_dir, title = "Select transferred file", filetypes=[("CSV files", "*.csv")])
+
 data = pd.read_csv(CSV_tf)
 plt.ion()
 
