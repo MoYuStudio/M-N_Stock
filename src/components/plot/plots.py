@@ -3,14 +3,15 @@ import pandas as pd
 
 CSV_tf = 'data/transformed_data/transferred.csv'
 data = pd.read_csv(CSV_tf)
+plt.ion()
+
+# Lock z axis
 
 z_min = data['z_ICRF'].min()
 z_max = data['z_ICRF'].max()
 
 def set_range(ax):
     ax.set_zlim([z_min, z_max])
-
-plt.ion()
 
 # fig 1
 def plot_icrf():
@@ -26,6 +27,8 @@ def plot_icrf():
     ax.set_zlabel('Z')
 
     # set_range(ax)
+
+    ax.set_title("ICRF")
 
     icrf.canvas.manager.window.attributes('-topmost', 1)
     icrf.canvas.manager.window.attributes('-topmost', 0)
@@ -47,6 +50,8 @@ def plot_ecl():
 
     set_range(ax)
 
+    ax.set_title("Ecliptic")
+
     Ecliptic.canvas.manager.window.attributes('-topmost', 1)
     Ecliptic.canvas.manager.window.attributes('-topmost', 0)
 
@@ -64,8 +69,10 @@ def plot_polar():
 
     set_range(ax)
 
+    ax.set_title("Polar")
+
 plot_polar()
 
-input("Press Enter to close figures")
+input("Press Enter to end")
 
 

@@ -1,18 +1,36 @@
+
+
 import pandas as pd
-import numpy as np
+from astropy import units as u
+from astropy.coordinates import SkyCoord, BarycentricMeanEcliptic
 
 # Load the dataset
-data = pd.read_csv('data/transformed_data/transferred.csv')
+df = pd.read_csv('data/transformed_data/transferred.csv')
 
-# Compute the R.A in the Ecliptic plane
-data['RA_Ecl'] = np.arctan2(data['y_Ecl'], data['x_Ecl'])
+# Function to convert coordinates
+def convert_to_ecliptic(row):
+    icrf_coord = SkyCoord(ra=row['R.A._ICRF']*u.deg, dec=row['DEC_ICRF']*u.deg, frame='icrs')
+    ecl_coord = icrf_coord.transform_to(BarycentricMeanEcliptic)
+    return pd.Series({'R.A._Ecl': ecl_coord.lon.deg, 'DEC_Ecl': ecl_coord.lat.deg})
 
-# Convert the R.A to degrees from radians
-data['RA_Ecl'] = np.degrees(data['RA_Ecl'])
+# Apply the function to every row in the dataframe
+df[['R.A._Ecl', 'DEC_Ecl']] = df.apply(convert_to_ecliptic, axis=1)
 
-# Adjust the values to be within 0-360 degrees
-data['RA_Ecl'] = data['RA_Ecl'].apply(lambda x: x if x > 0 else x + 360)
+# Save the updated dataset
+df.to_csv('data/transformed_data/transferred.csv', index=False)
 
-# Save the updated DataFrame back to the csv
-data.to_csv('data/transformed_data/transferred.csv', index=False)
+exit()
+
+
+
+
+
+
+
+
+
+
+
+
+
 

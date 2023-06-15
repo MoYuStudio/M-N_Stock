@@ -4,7 +4,9 @@ from datetime import datetime
 import tempfile
 import shutil
 import math
-
+import numpy as np
+from astropy import units as u 
+from astropy.coordinates import SkyCoord, BarycentricMeanEcliptic
 import pandas as pd
 
 csv_tf = 'data/transformed_data/transferred.csv'
@@ -31,6 +33,23 @@ def rewrite_dates():
 
 rewrite_dates()
 
+#! Celestial coordinate convert
+
+def ecliptic_convert():
+
+    data = pd.read_csv(csv_tf)
+
+    def convert_to_ecliptic(row):
+        icrf_coord = SkyCoord(ra=row['R.A._ICRF']*u.deg, dec=row['DEC_ICRF']*u.deg, frame='icrs')
+        ecl_coord = icrf_coord.transform_to(BarycentricMeanEcliptic)
+        return pd.Series({'R.A._Ecl': ecl_coord.lon.deg, 'DEC_Ecl': ecl_coord.lat.deg})
+
+    data[['R.A._Ecl', 'DEC_Ecl']] = data.apply(convert_to_ecliptic, axis=1)
+
+    data.to_csv(csv_tf, index=False)
+
+ecliptic_convert()
+
 #! Opposition
 
 def compute_oppositions():
@@ -43,6 +62,9 @@ def compute_oppositions():
 
     data['Opposition'] = data['Opposition'].mask((data['Opposition'] == 2) & (data['Opposition'].shift() == 1), 3)
     data['Opposition'] = data['Opposition'].mask((data['Opposition'] == 1) & (data['Opposition'].shift() == 2), 4)
+
+    data['Opposition'] = data['Opposition'].mask(data.index == 0, np.nan) # Ignore first row
+    data = data.iloc[1:] # Drop first row
 
     data.to_csv(csv_tf, index=False)
 
@@ -144,11 +166,6 @@ def add_polar_coordinates():
     shutil.move(temp_file.name, filename)
 
 add_polar_coordinates()
-
-
-
-
-
 
 
 
