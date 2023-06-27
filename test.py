@@ -93,33 +93,55 @@ lookup_table = [
 
 def range_fixer(ranges):
     overlapping_ranges = []
-    
+
     for i in range(len(ranges) - 1):
         range1 = ranges[i]
         key1, values1 = list(range1.items())[0]
-        
+        overlap = False
+
         for j in range(i + 1, len(ranges)):
             range2 = ranges[j]
             key2, values2 = list(range2.items())[0]
-            
+
             # Compare each pair of ranges
             if key1 in key2 or key2 in key1:
                 overlap = any(x <= values2[0] <= y or x <= values2[1] <= y for x, y in zip(values1[::2], values1[1::2]))
-                
+
                 if overlap:
                     overlapping_ranges.append([key1, values1, key2, values2])
-    
+
+        if not overlap:
+            overlapping_ranges.append([key1, values1])
+
     return overlapping_ranges
 
 
-def save_overlapping_ranges_to_csv(file_path, overlapping_ranges):
+def save_overlapping_ranges_to_csv(file_path, overlapping_ranges, lookup_table):
     with open(file_path, 'w', newline='') as csv_file:
         writer = csv.writer(csv_file)
-        writer.writerow(['Range 1 Key', 'Range 1 Values', 'Range 2 Key', 'Range 2 Values'])
-        
-        for row in overlapping_ranges:
-            writer.writerow(row)
+        header = ['Range Key', 'Range Values', 'Overlap']
+        writer.writerow(header)
 
+        range_keys = [row[0] for row in overlapping_ranges]
+        range_labels = [key[0] for key in lookup_table]
+
+        for range_label in range_labels:
+            range_key = next((key for key in range_keys if key == range_label), None)
+            overlap = range_key is not None
+
+            if overlap:
+                range_values = next(row[1] for row in overlapping_ranges if row[0] == range_key)
+            else:
+                range_values = []
+
+            writer.writerow([range_label, range_values, overlap])
+
+        for range_key in range_keys:
+            if range_key not in range_labels:
+                overlap = True
+                range_values = next(row[1] for row in overlapping_ranges if row[0] == range_key)
+                range_label = next(key[0] for key in lookup_table if key[0] == range_key)
+                writer.writerow([range_label, range_values, overlap])
 
 def organize_data_from_csv(file_path, ranges):
     organized_data = {}
@@ -137,7 +159,6 @@ def organize_data_from_csv(file_path, ranges):
                 organized_data[key].append(values[i])
     
     return organized_data
-
 
 def generate_ranges_from_data(organized_data):
     ranges = []
@@ -159,7 +180,7 @@ def generate_ranges_from_data(organized_data):
     return ranges
 
 
-data_file = 'data/transformed_data/ecl_interactions.csv'
+data_file = 'data/transformed_data/ecl_interactions_lite.csv'
 range_frame = {
     'A': [0, 0],
     'B': [0, 0],
@@ -176,4 +197,4 @@ ranges = generate_ranges_from_data(organized_data)
 overlapping_ranges = range_fixer(ranges)
 
 output_file = 'data/transformed_data/overlapping_ranges.csv'
-save_overlapping_ranges_to_csv(output_file, overlapping_ranges)
+save_overlapping_ranges_to_csv(output_file, overlapping_ranges, lookup_table)
