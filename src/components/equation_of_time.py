@@ -9,7 +9,7 @@ import matplotlib.pyplot
 import pytz
 
 class EquationOfTime:
-    def __init__(self,year,month,day,hour,minute,second,timezone='Asia/Shanghai'):
+    def __init__(self,year=2000,month=1,day=1,hour=0,minute=0,second=0,timezone='Asia/Shanghai'):
         self.leap_year_info = None
         self.year_days = None
         self.day_per_month = [31,28,31,30,31,30,31,31,30,31,30,31]
