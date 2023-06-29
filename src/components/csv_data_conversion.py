@@ -7,7 +7,7 @@ from . import equation_of_time
 from . import day_convert
 
 class CSVDataConversion:
-    def __init__(self, folder_path = 'src/module/data/Astrostock_Model/Preliminal_Screening/Transformed_Data/transferred.csv'):
+    def __init__(self, folder_path = 'data/transformed_data/transferred.csv'):
         
         self.folder_path = folder_path
         
@@ -23,7 +23,7 @@ class CSVDataConversion:
             
             mouth_dict = {'Jan':1,'Feb':2,'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
             
-            self.eot = equation_of_time.EquationOfTime(int(i[0]+i[1]+i[2]+i[3]),mouth_dict[i[5]+i[6]+i[7]],int(i[9]+i[10]),0,0,0,timezone='Europe/London')
+            self.eot = equation_of_time.EquationOfTime(int(i[0]+i[1]+i[2]+i[3]),mouth_dict[i[5]+i[6]+i[7]],int(i[9]+i[10]),0,0,0,timezone='Europe/London',dst_switch=False)
             self.dc = day_convert.DayConvert(self.eot.true_solar_time)
             
             self.ymd = self.dc.year_gan + self.dc.month_gan + self.dc.day_gan

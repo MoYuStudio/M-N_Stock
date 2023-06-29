@@ -9,7 +9,7 @@ import matplotlib.pyplot
 import pytz
 
 class EquationOfTime:
-    def __init__(self,year,month,day,hour,minute,second,timezone='Asia/Shanghai'):
+    def __init__(self,year,month,day,hour,minute,second,timezone='Europe/London',dst_switch=True):
         self.leap_year_info = None
         self.year_days = None
         self.day_per_month = [31,28,31,30,31,30,31,31,30,31,30,31]
@@ -27,7 +27,8 @@ class EquationOfTime:
         self.timezone_hour_offset = self.timezone_datetime.utcoffset().total_seconds()/60/60
 
         self.leap_year()
-        #self.dst_offset() #TODO：夏令时开关
+        if dst_switch:
+            self.dst_offset() #TODO：夏令时开关
         self.true_solar_offset()
 
     def leap_year(self):

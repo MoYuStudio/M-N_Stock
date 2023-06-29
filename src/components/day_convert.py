@@ -13,10 +13,11 @@ class DayConvert:
         # self.gan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
         # self.zhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
         self.zhi = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
-
+        
         self.run()
 
     def run(self):
+
         self.day = sxtwl.fromSolar(self.true_solar_time.year, self.true_solar_time.month, self.true_solar_time.day)
 
         self.y_tg = self.day.getYearGZ()
