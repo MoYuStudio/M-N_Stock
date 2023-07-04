@@ -16,33 +16,17 @@ data_file = filedialog.askopenfilename(initialdir = def_dir, title = "Select dat
 # Read the data
 df = pd.read_csv(data_file)
 
-# Get column names
-columns = df.columns[1:]  # Exclude date column
-
-# Initialize empty dictionary to store overlaps
-overlaps = {f'{col1}{col2}': [] for col1, col2 in itertools.combinations(columns, 2)}
-
-# Iterate over rows
+# Step 2: Generate all possible numbers from the current observation to the next for all variables
 for i in range(len(df) - 1):
-    # Generate all possible numbers for each variable
-    ranges = {col: np.arange(df.loc[i, col], df.loc[i+1, col], 0.01) for col in columns}
-    
-    # Compare generated values and identify overlapped value between variables
-    for col1, col2 in itertools.combinations(columns, 2):
-        overlap = np.intersect1d(ranges[col1], ranges[col2])
-        overlaps[f'{col1}{col2}'].append(overlap)
-
-# Save the overlapped values to the current dataset
-for pair, overlap in overlaps.items():
-    df[pair] = pd.Series(overlap)
-
-# Save the updated dataframe to a new CSV file
-df.to_csv('data/transformed_data/overlaps.csv', index=False)
-
-
-
-
-
-
-
+    values = {}
+    for column in df.columns[1:]:  # Exclude date column
+        start = df.loc[i, column]
+        end = df.loc[i+1, column]
+        if start < end:
+            values = np.arange(start, end, 0.001)
+        elif start > end:
+            values = np.arange(start, end, -0.001)
+        else:
+            values = np.array([start])
+        print(f"Generated values for {column} from row {i} to {i+1}: {values}")
 
